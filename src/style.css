@@ -3,17 +3,17 @@
    ============================== */
 @font-face {
   font-family: 'BentonSans';
-  src: url('../static/BentonSansCompBlackRegular.otf') format('truetype');
+  src: url('../static/fonts/BentonSansCompBlackRegular.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'BentonSans Book';
-  src: url('https://cdn.glitch.global/1afe9a7f-49a8-4347-8b5e-f398e8d465f4/BentonSans_Book%5B1%5D.otf?v=1738927592681') format('truetype');
+  src: url('../static/fonts/BentonSans Book.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'Amatic';
-  src: url('https://cdn.glitch.global/1afe9a7f-49a8-4347-8b5e-f398e8d465f4/Amatic%20SC%20Regular.ttf?v=1736318611167') format('truetype');
+  src: url('../static/fonts/Amatic SC Regular.ttf') format('truetype');
 }
 
 
