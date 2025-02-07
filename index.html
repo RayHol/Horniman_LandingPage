@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta & Fonts -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Page Title -->
+    <title>Animals Everywhere</title>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=BentonSans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=BentonSans+Book:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./src/style.css">
+
+    <!-- A-Frame & Dependencies -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/IdeaSpaceVR/aframe-particle-system-component@latest/dist/aframe-particle-system-component.min.js"></script>
+    <script src="./static/ammo.wasm.js"></script>
+
+    <!-- Local JavaScript Components -->
+    <script src="./src/components/ar-utils.js"></script>
+    <script src="./src/components/actor-utils.js"></script>
+    <script src="./src/components/planting-utils.js"></script>
+    <script src="./src/components/physics-utils.js"></script>
+
+    <!-- UI Logic -->
+    <script>
+        function closeOnboarding() {
+            document.getElementById('onboarding').style.display = "none";
+            document.getElementById('howToPlay').style.display = "flex";
+        }
+
+        function closeHowToPlay() {
+            document.getElementById('howToPlay').style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- ===========================
+         ONBOARDING OVERLAY
+    ============================ -->
+    <div id="onboarding" class="overlay">
+        <header>
+            <img src="./static/images/HMG Logo - Header.png" alt="HMG Logo" class="onboarding-logo">
+        </header>
+        <main class="onboarding-content">
+            <h1 class="onboarding-title">Animals Everywhere</h1>
+            <button onclick="closeOnboarding()" class="button">Start</button>
+        </main>
+    </div>
+
+
+    <!-- ===========================
+         HOW TO PLAY OVERLAY
+    ============================ -->
+    <div id="howToPlay" class="overlay hidden">
+        <header>
+            <button class="back-button" onclick="closeHowToPlay()">
+                <img src="./static/images/Arrow.png" alt="Back">
+            </button>
+            <h1>How to Play</h1>
+            <div class="header-placeholder"></div>
+        </header>
+
+        <main class="how-to-play">
+            <!-- Instruction 1 -->
+            <div class="instruction">
+                <div class="instruction-icon">
+                    <img src="./static/images/icon-number.png" alt="Step 1" class="number-icon">
+                    <p class="instruction-text">Tap the screen to dig a hole.</p>
+                </div>
+                <img src="./static/images/HTPImage.png" alt="Digging a hole" class="instruction-image">
+            </div>
+
+            <!-- Instruction 2 (Reversed layout) -->
+            <div class="instruction reverse">
+                <img src="./static/images/HTPImage-2.png" alt="Planting seeds" class="instruction-image">
+                <div class="instruction-icon">
+                    <img src="./static/images/icon-number-2.png" alt="Step 2" class="number-icon">
+                    <p class="instruction-text">Select the seeds, aim and tap in each hole to plant them.</p>
+                </div>
+            </div>
+
+            <!-- Instruction 3 -->
+            <div class="instruction">
+                <div class="instruction-icon">
+                    <img src="./static/images/icon-number-3.png" alt="Step 3" class="number-icon">
+                    <p class="instruction-text">Tap the screen to tip the watering can and water the seedlings.</p>
+                </div>
+                <img src="./static/images/HTPImage-3.png" alt="Watering plants" class="instruction-image">
+            </div>
+        </main>
+
+        <footer>
+            <button class="button" onclick="closeHowToPlay()">Let's Go</button>
+        </footer>
+    </div>
+
+</body>
+</html>
