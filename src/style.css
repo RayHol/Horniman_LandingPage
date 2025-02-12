@@ -191,7 +191,7 @@
     flex-direction: column;
     justify-content: flex-start; 
     align-items: center;
-    transform: translateY(100px);
+    transform: translateY(0px);
     flex-grow: 0; 
 }
 
@@ -237,6 +237,14 @@
     box-shadow: 0px 4px 0px 0px #E7D4A3;
     cursor: pointer;
 }
+
+.congrats-badge {
+    width: 112px; 
+    height: auto;
+    margin-bottom: 0px; 
+    transform: translateY(-20px);
+}
+
 
 
 /* ==============================
