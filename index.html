@@ -32,6 +32,11 @@
 
     <!-- UI Logic -->
     <script>
+      
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("congrats").classList.add("hidden");
+        });  
+      
         function closeOnboarding() {
             document.getElementById('onboarding').style.display = "none";
             document.getElementById('howToPlay').style.display = "flex";
@@ -40,6 +45,19 @@
         function closeHowToPlay() {
             document.getElementById('howToPlay').style.display = "none";
         }
+      
+        function closeCongrats() {
+            location.reload(); // Refresh the page to go back to the home screen
+        }
+
+        // TESTING: Pressing the 'C' key will show the Congratulations overlay
+        document.addEventListener('keydown', function(event) {
+            if (event.key.toLowerCase() === 'c') {
+                document.getElementById('congrats').style.display = "flex";
+            }
+        });
+      
+
     </script>
 </head>
 
@@ -104,6 +122,21 @@
             <button class="button" onclick="closeHowToPlay()">Let's Go</button>
         </footer>
     </div>
+  
+    <!-- ===========================
+         CONGRATULATIONS OVERLAY
+    ============================ -->
+    <div id="congrats" class="overlay hidden">
+        <main class="congrats-content">
+            <h1>Congratulations!</h1>
+            <p class="congrats-message">You did it! Well done.</p>
+        </main>
+
+        <footer> 
+            <button class="congrats-button" onclick="closeCongrats()">Go to Home</button>
+        </footer>
+    </div>
+
 
 </body>
 </html>
